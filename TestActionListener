@@ -1,0 +1,24 @@
+import javax.swing.*;
+import java.awt.event. *;
+import java.awt.*;
+public class TestActionListener implements ActionListener
+{
+    public static void main(String [] args)
+    {
+// create a frame
+        JFrame frame= new JFrame("Listeners ");
+        frame.setLayout(new FlowLayout());
+        TestActionListener listener= new TestActionListener();// listener object
+        JButton but1= new JButton("View");
+        but1.addActionListener(listener);//register the event and handle the event
+        frame.add(but1);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    // implements the method of ActionListener interface
+    public void actionPerformed(ActionEvent evt)
+    {
+// implement what happens when Button is clicked
+        JOptionPane.showConfirmDialog(null,"Button Clicked?");
+    }
+}
